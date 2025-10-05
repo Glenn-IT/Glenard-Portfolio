@@ -110,3 +110,77 @@ sr.reveal(`.work__card, .services__card`, {nterval: 100})
 sr.reveal(`.about__content`, {origin: 'right'})
 sr.reveal(`.about__img`, {origin: 'left'})
 
+/*=============== VISITOR COUNTER ===============*/
+const initVisitorCounter = () => {
+    // Get current counts from localStorage
+    let visitorCount = localStorage.getItem('visitorCount');
+    let pageViews = localStorage.getItem('pageViews');
+    let lastVisit = localStorage.getItem('lastVisit');
+    
+    // Initialize if first time
+    if (!visitorCount) {
+        visitorCount = 0;
+    } else {
+        visitorCount = parseInt(visitorCount);
+    }
+    
+    if (!pageViews) {
+        pageViews = 0;
+    } else {
+        pageViews = parseInt(pageViews);
+    }
+    
+    // Check if this is a new visitor (hasn't visited in the last 24 hours)
+    const now = new Date().getTime();
+    const oneDay = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+    
+    if (!lastVisit || (now - parseInt(lastVisit)) > oneDay) {
+        visitorCount++;
+        localStorage.setItem('lastVisit', now.toString());
+        localStorage.setItem('visitorCount', visitorCount.toString());
+    }
+    
+    // Always increment page views
+    pageViews++;
+    localStorage.setItem('pageViews', pageViews.toString());
+    
+    // Update the display
+    updateCounterDisplay(visitorCount, pageViews);
+}
+
+const updateCounterDisplay = (visitors, views) => {
+    const visitorElement = document.getElementById('visitor-count');
+    const pageViewsElement = document.getElementById('page-views');
+    
+    if (visitorElement) {
+        // Add animation effect
+        visitorElement.style.opacity = '0';
+        setTimeout(() => {
+            visitorElement.textContent = visitors.toLocaleString();
+            visitorElement.style.opacity = '1';
+        }, 200);
+    }
+    
+    if (pageViewsElement) {
+        // Add animation effect
+        pageViewsElement.style.opacity = '0';
+        setTimeout(() => {
+            pageViewsElement.textContent = views.toLocaleString();
+            pageViewsElement.style.opacity = '1';
+        }, 400);
+    }
+}
+
+// Initialize counter when page loads
+document.addEventListener('DOMContentLoaded', initVisitorCounter);
+
+// Optional: Reset counters function (for testing)
+const resetCounters = () => {
+    localStorage.removeItem('visitorCount');
+    localStorage.removeItem('pageViews');
+    localStorage.removeItem('lastVisit');
+    initVisitorCounter();
+}
+
+// Uncomment the line below if you want to reset counters (for testing)
+// resetCounters();

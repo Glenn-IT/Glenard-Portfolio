@@ -619,6 +619,54 @@ img {
   text-align: center;
 }
 
+.footer__counter {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.visitor-counter,
+.page-views {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--first-color-alt), var(--first-color));
+  border-radius: 2rem;
+  box-shadow: 0 4px 12px hsla(var(--hue), 55%, 55%, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.visitor-counter:hover,
+.page-views:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px hsla(var(--hue), 55%, 55%, 0.4);
+}
+
+.visitor-counter i,
+.page-views i {
+  font-size: 1.2rem;
+  color: var(--title-color);
+}
+
+.counter-text {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  font-size: var(--small-font-size);
+}
+
+#visitor-count,
+#page-views {
+  color: var(--title-color);
+  font-weight: var(--font-bold);
+  font-size: var(--normal-font-size);
+  transition: opacity 0.3s ease;
+  min-width: 2rem;
+  text-align: center;
+}
+
 /*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar {
   width: 0.6rem;
@@ -894,6 +942,18 @@ img {
   .footer__links {
     column-gap: 4rem;
     order: 1;
+  }
+
+  .footer__counter {
+    flex-direction: row;
+    gap: 2rem;
+    order: 2;
+    margin-top: 0;
+  }
+
+  .visitor-counter,
+  .page-views {
+    padding: 1rem 2rem;
   }
 
   .scrollup {
