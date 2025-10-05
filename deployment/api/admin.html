@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitor Analytics - Admin Panel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+        
+        .stat-card .number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .refresh-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        
+        .refresh-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .recent-activity {
+            padding: 30px;
+            border-top: 1px solid #eee;
+        }
+        
+        .activity-item {
+            padding: 15px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        .timestamp {
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Portfolio Analytics</h1>
+            <p>Real-time visitor tracking for Glenn's Portfolio</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Visitors</h3>
+                <div class="number" id="total-visitors">0</div>
+                <p>All time unique visitors</p>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Total Page Views</h3>
+                <div class="number" id="total-views">0</div>
+                <p>All time page views</p>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Today's Visitors</h3>
+                <div class="number" id="today-visitors">0</div>
+                <p>Unique visitors today</p>
+            </div>
+            
+            <div class="stat-card">
+                <h3>Today's Views</h3>
+                <div class="number" id="today-views">0</div>
+                <p>Page views today</p>
+            </div>
+        </div>
+        
+        <button class="refresh-btn" onclick="loadStats()">🔄 Refresh Data</button>
+        
+        <div class="recent-activity">
+            <h2>📊 Quick Stats</h2>
+            <div class="activity-item">
+                <strong>Average views per visitor:</strong> 
+                <span id="avg-views">0</span>
+            </div>
+            <div class="activity-item">
+                <strong>Last updated:</strong> 
+                <span class="timestamp" id="last-updated">Never</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function loadStats() {
+            try {
+                const response = await fetch('visitor_counter.php');
+                const result = await response.json();
+                
+                if (result.success) {
+                    const data = result.data;
+                    
+                    document.getElementById('total-visitors').textContent = data.total_visitors.toLocaleString();
+                    document.getElementById('total-views').textContent = data.total_page_views.toLocaleString();
+                    document.getElementById('today-visitors').textContent = data.today_visitors.toLocaleString();
+                    document.getElementById('today-views').textContent = data.today_page_views.toLocaleString();
+                    
+                    // Calculate average views per visitor
+                    const avgViews = data.total_visitors > 0 ? (data.total_page_views / data.total_visitors).toFixed(2) : 0;
+                    document.getElementById('avg-views').textContent = avgViews;
+                    
+                    document.getElementById('last-updated').textContent = new Date().toLocaleString();
+                } else {
+                    alert('Error loading stats: ' + result.error);
+                }
+            } catch (error) {
+                alert('Error connecting to server: ' + error.message);
+            }
+        }
+        
+        // Load stats on page load
+        loadStats();
+        
+        // Auto-refresh every 30 seconds
+        setInterval(loadStats, 30000);
+    </script>
+</body>
+</html>

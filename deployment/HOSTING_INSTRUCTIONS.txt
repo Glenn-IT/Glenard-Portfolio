@@ -1,0 +1,17 @@
+GLENN'S PORTFOLIO - HOSTING INSTRUCTIONS 
+======================================= 
+ 
+FILES TO UPLOAD: 
+- index.html (main page) 
+- assets/ folder (all CSS, JS, images) 
+- api/ folder (PHP files for visitor counter) 
+- .htaccess (performance and security) 
+ 
+SETUP STEPS: 
+1. Upload all files to your hosting's htdocs folder 
+2. Create MySQL database in hosting control panel 
+3. Import api/database.sql into your database 
+4. Edit api/config.php with your database details 
+5. Test your site! 
+ 
+Need help? Contact: glenard2308@gmail.com 

@@ -635,11 +635,7 @@ img {
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(
-    135deg,
-    var(--first-color-alt),
-    var(--first-color)
-  );
+  background: linear-gradient(135deg, var(--first-color-alt), var(--first-color));
   border-radius: 2rem;
   box-shadow: 0 4px 12px hsla(var(--hue), 55%, 55%, 0.3);
   transition: all 0.3s ease;
@@ -716,62 +712,6 @@ img {
   bottom: 3rem;
 }
 
-/*=============== STICKY VISITOR COUNTER ===============*/
-.sticky-visitor-counter {
-  position: fixed;
-  right: 1rem;
-  bottom: -50%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  z-index: var(--z-tooltip);
-  transition: bottom 0.4s;
-}
-
-.visitor-counter-compact,
-.page-views-compact {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 0.5rem 0.75rem;
-  background: linear-gradient(
-    135deg,
-    var(--first-color-alt),
-    var(--first-color)
-  );
-  border-radius: 1.5rem;
-  box-shadow: 0 4px 12px hsla(var(--hue), 55%, 55%, 0.3);
-  transition: all 0.3s ease;
-  min-width: fit-content;
-}
-
-.visitor-counter-compact:hover,
-.page-views-compact:hover {
-  transform: translateX(-4px);
-  box-shadow: 0 6px 20px hsla(var(--hue), 55%, 55%, 0.4);
-}
-
-.visitor-counter-compact i,
-.page-views-compact i {
-  font-size: 1rem;
-  color: var(--title-color);
-}
-
-.visitor-counter-compact span,
-.page-views-compact span {
-  color: var(--title-color);
-  font-weight: var(--font-bold);
-  font-size: var(--small-font-size);
-  min-width: 1.5rem;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-/* Show Sticky Counter */
-.show-sticky-counter {
-  bottom: 6rem;
-}
-
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 @media screen and (max-width: 300px) {
@@ -781,28 +721,6 @@ img {
 
   .skills__content {
     grid-template-columns: repeat(2, max-content);
-  }
-
-  .sticky-visitor-counter {
-    right: 0.5rem;
-    gap: 0.25rem;
-  }
-
-  .visitor-counter-compact,
-  .page-views-compact {
-    padding: 0.4rem 0.6rem;
-    gap: 0.2rem;
-  }
-
-  .visitor-counter-compact i,
-  .page-views-compact i {
-    font-size: 0.9rem;
-  }
-
-  .visitor-counter-compact span,
-  .page-views-compact span {
-    font-size: 0.75rem;
-    min-width: 1rem;
   }
 }
 
@@ -865,14 +783,6 @@ img {
 
   .services__container {
     grid-template-columns: repeat(2, 320px);
-  }
-
-  .sticky-visitor-counter {
-    right: 1.5rem;
-  }
-
-  .show-sticky-counter {
-    bottom: 7rem;
   }
 }
 
@@ -1058,18 +968,5 @@ img {
 
   .scrollup {
     right: 3rem;
-  }
-
-  .sticky-visitor-counter {
-    right: 3rem;
-  }
-
-  .visitor-counter-compact,
-  .page-views-compact {
-    padding: 0.75rem 1.25rem;
-  }
-
-  .show-sticky-counter {
-    bottom: 8rem;
   }
 }
