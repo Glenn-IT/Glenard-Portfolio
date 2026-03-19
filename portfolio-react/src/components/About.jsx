@@ -1,5 +1,14 @@
 import { useEffect, useRef } from "react";
-import { Code2, Shield, Wrench, Globe, Star, Users, Trophy, GraduationCap } from "lucide-react";
+import {
+  Code2,
+  Shield,
+  Wrench,
+  Globe,
+  Star,
+  Users,
+  Trophy,
+  GraduationCap,
+} from "lucide-react";
 
 const stats = [
   { icon: Code2, label: "Projects Built", value: "20+" },
@@ -14,7 +23,10 @@ const highlights = [
   { icon: Code2, text: "Full-stack & Desktop App Developer" },
   { icon: Wrench, text: "IT Support @ COMELEC — 200+ employees" },
   { icon: Trophy, text: "Programmer of the Year — CSU Class of 2023" },
-  { icon: GraduationCap, text: "BS Information Technology — Dean's Lister (All 4 yrs)" },
+  {
+    icon: GraduationCap,
+    text: "BS Information Technology — Dean's Lister (All 4 yrs)",
+  },
 ];
 
 export default function About() {
@@ -126,22 +138,43 @@ export default function About() {
                   <span className="text-amethyst-400 font-semibold">
                     Glenard Pagurayan
                   </span>
-                  , an IT Support Specialist with <span className="text-white font-medium">1 year and 11 months</span> of
-                  hands-on experience at <span className="text-white font-medium">COMELEC Region 2</span>, providing
-                  technical support to 200+ government employees. I specialize in troubleshooting, system
-                  maintenance, and user support in high-stakes environments.
+                  , an IT Support Specialist with{" "}
+                  <span className="text-white font-medium">
+                    1 year and 11 months
+                  </span>{" "}
+                  of hands-on experience at{" "}
+                  <span className="text-white font-medium">
+                    COMELEC Region 2
+                  </span>
+                  , providing technical support to 200+ government employees. I
+                  specialize in troubleshooting, system maintenance, and user
+                  support in high-stakes environments.
                 </p>
                 <p>
-                  On the development side, I build full-stack web and desktop applications using <span className="text-white font-medium">PHP, C#, MySQL, JavaScript,</span> and <span className="text-white font-medium">Kotlin</span> — delivering
-                  real-world solutions like billing systems, e-commerce platforms, and Android booking apps.
+                  On the development side, I build full-stack web and desktop
+                  applications using{" "}
+                  <span className="text-white font-medium">
+                    PHP, C#, MySQL, JavaScript,
+                  </span>{" "}
+                  and <span className="text-white font-medium">Kotlin</span> —
+                  delivering real-world solutions like billing systems,
+                  e-commerce platforms, and Android booking apps.
                 </p>
                 <p>
-                  A <span className="text-amethyst-400 font-semibold">Consistent Dean's Lister</span> and{" "}
-                  <span className="text-amethyst-400 font-semibold">Programmer of the Year</span> at Cagayan State University.
-                  Currently seeking opportunities in <span className="text-amethyst-400">IT Support</span>,{" "}
+                  A{" "}
+                  <span className="text-amethyst-400 font-semibold">
+                    Consistent Dean's Lister
+                  </span>{" "}
+                  and{" "}
+                  <span className="text-amethyst-400 font-semibold">
+                    Programmer of the Year
+                  </span>{" "}
+                  at Cagayan State University. Currently seeking opportunities
+                  in <span className="text-amethyst-400">IT Support</span>,{" "}
                   <span className="text-amethyst-400">Help Desk</span>, or{" "}
                   <span className="text-amethyst-400">Junior Developer</span>{" "}
-                  roles — available immediately and open to Work Pass Sponsorship.
+                  roles — available immediately and open to Work Pass
+                  Sponsorship.
                 </p>
               </div>
             </div>

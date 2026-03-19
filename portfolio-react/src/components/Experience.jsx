@@ -326,14 +326,20 @@ export default function Experience() {
               <h3 className="text-xl font-bold text-white">Education</h3>
             </div>
             <div className="p-4 rounded-xl bg-white/3 border border-white/8">
-              <p className="font-semibold text-white mb-1">Bachelor of Science in Information Technology</p>
-              <p className="text-amethyst-400 text-sm font-medium mb-2">Cagayan State University</p>
+              <p className="font-semibold text-white mb-1">
+                Bachelor of Science in Information Technology
+              </p>
+              <p className="text-amethyst-400 text-sm font-medium mb-2">
+                Cagayan State University
+              </p>
               <p className="text-gray-500 text-xs mb-3 flex items-center gap-1.5">
                 <Calendar size={11} /> 2019 – 2023
               </p>
               <div className="flex items-center gap-2 p-2 rounded-lg bg-amethyst-500/10 border border-amethyst-500/15">
                 <Star size={13} className="text-amethyst-400 flex-shrink-0" />
-                <span className="text-xs text-amethyst-300 font-medium">Consistent Dean's Lister — All 4 Years</span>
+                <span className="text-xs text-amethyst-300 font-medium">
+                  Consistent Dean's Lister — All 4 Years
+                </span>
               </div>
             </div>
           </div>
@@ -344,16 +350,33 @@ export default function Experience() {
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amethyst-500 to-slate_blue-500 flex items-center justify-center">
                 <Trophy size={20} className="text-white" />
               </div>
-              <h3 className="text-xl font-bold text-white">Awards & Recognition</h3>
+              <h3 className="text-xl font-bold text-white">
+                Awards & Recognition
+              </h3>
             </div>
             <ul className="space-y-3">
               {[
-                { icon: "🏆", text: "Academic Distinction Award — Cagayan State University" },
-                { icon: "💻", text: "Best Capstone Project (Online Category) — Online Appointment System" },
-                { icon: "⭐", text: "Programmer of the Year — Class of 2023, Cagayan State University" },
-                { icon: "👑", text: "Leadership Award — IT Department Student Council" },
+                {
+                  icon: "🏆",
+                  text: "Academic Distinction Award — Cagayan State University",
+                },
+                {
+                  icon: "💻",
+                  text: "Best Capstone Project (Online Category) — Online Appointment System",
+                },
+                {
+                  icon: "⭐",
+                  text: "Programmer of the Year — Class of 2023, Cagayan State University",
+                },
+                {
+                  icon: "👑",
+                  text: "Leadership Award — IT Department Student Council",
+                },
               ].map((award, i) => (
-                <li key={i} className="flex items-start gap-3 p-3 rounded-xl bg-white/3 border border-white/8 hover:border-amethyst-500/20 transition-all duration-200">
+                <li
+                  key={i}
+                  className="flex items-start gap-3 p-3 rounded-xl bg-white/3 border border-white/8 hover:border-amethyst-500/20 transition-all duration-200"
+                >
                   <span className="text-lg flex-shrink-0">{award.icon}</span>
                   <span className="text-sm text-gray-300">{award.text}</span>
                 </li>
