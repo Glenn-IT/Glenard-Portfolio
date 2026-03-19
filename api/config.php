@@ -24,8 +24,7 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     
-    // Test connection (remove this after setup)
-    echo "Database connected successfully!";
+    // Connection successful - no output needed for production
     
 } catch(PDOException $e) {
     // Log error (don't show to users in production)
