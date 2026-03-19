@@ -1,18 +1,20 @@
 import { useEffect, useRef } from "react";
-import { Code2, Shield, Wrench, Globe, Star, Users } from "lucide-react";
+import { Code2, Shield, Wrench, Globe, Star, Users, Trophy, GraduationCap } from "lucide-react";
 
 const stats = [
   { icon: Code2, label: "Projects Built", value: "20+" },
   { icon: Shield, label: "Certifications", value: "8+" },
   { icon: Wrench, label: "IT Experience", value: "2+ yrs" },
-  { icon: Users, label: "Happy Clients", value: "10+" },
+  { icon: Users, label: "Employees Supported", value: "200+" },
 ];
 
 const highlights = [
   { icon: Globe, text: "Philippines · Open to Remote & Relocation" },
   { icon: Star, text: "Google IT Support Professional Certified" },
   { icon: Code2, text: "Full-stack & Desktop App Developer" },
-  { icon: Wrench, text: "IT Support @ COMELEC & DENR-EMB" },
+  { icon: Wrench, text: "IT Support @ COMELEC — 200+ employees" },
+  { icon: Trophy, text: "Programmer of the Year — CSU Class of 2023" },
+  { icon: GraduationCap, text: "BS Information Technology — Dean's Lister (All 4 yrs)" },
 ];
 
 export default function About() {
@@ -65,7 +67,7 @@ export default function About() {
               {/* Image */}
               <div className="relative w-80 h-96 rounded-3xl overflow-hidden border border-amethyst-500/20 shadow-card">
                 <img
-                  src="assets/img/P2-removebg.png"
+                  src="/P2-removebg.png"
                   alt="Glenard Pagurayan"
                   className="w-full h-full object-cover object-top"
                   onError={(e) => {
@@ -124,26 +126,22 @@ export default function About() {
                   <span className="text-amethyst-400 font-semibold">
                     Glenard Pagurayan
                   </span>
-                  , an IT Support Specialist and aspiring Developer with over 2
-                  years of combined experience in technical support, system
-                  troubleshooting, and web development.
+                  , an IT Support Specialist with <span className="text-white font-medium">1 year and 11 months</span> of
+                  hands-on experience at <span className="text-white font-medium">COMELEC Region 2</span>, providing
+                  technical support to 200+ government employees. I specialize in troubleshooting, system
+                  maintenance, and user support in high-stakes environments.
                 </p>
                 <p>
-                  I specialize in diagnosing and resolving hardware/software
-                  issues, managing user accounts, and maintaining network and
-                  system infrastructure. I&apos;m also skilled in backend and
-                  frontend development, with hands-on experience building
-                  management systems used in real-world settings.
+                  On the development side, I build full-stack web and desktop applications using <span className="text-white font-medium">PHP, C#, MySQL, JavaScript,</span> and <span className="text-white font-medium">Kotlin</span> — delivering
+                  real-world solutions like billing systems, e-commerce platforms, and Android booking apps.
                 </p>
                 <p>
-                  I enjoy building practical solutions — appointment systems,
-                  billing platforms, and information management tools — that
-                  solve real-world problems. Currently I&apos;m seeking
-                  opportunities in{" "}
-                  <span className="text-amethyst-400">IT Support</span>,{" "}
+                  A <span className="text-amethyst-400 font-semibold">Consistent Dean's Lister</span> and{" "}
+                  <span className="text-amethyst-400 font-semibold">Programmer of the Year</span> at Cagayan State University.
+                  Currently seeking opportunities in <span className="text-amethyst-400">IT Support</span>,{" "}
                   <span className="text-amethyst-400">Help Desk</span>, or{" "}
                   <span className="text-amethyst-400">Junior Developer</span>{" "}
-                  roles.
+                  roles — available immediately and open to Work Pass Sponsorship.
                 </p>
               </div>
             </div>

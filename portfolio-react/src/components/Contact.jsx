@@ -215,7 +215,7 @@ export default function Contact() {
             {/* Resume link */}
             <div className="reveal">
               <a
-                href="assets/pdf/Applicant - Glenard Pagurayan - Resume.pdf"
+                href="https://drive.google.com/file/d/1oTESN53KYenGwP9OU3i5vMLF69w1XC5T/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full px-6 py-3 rounded-xl font-medium text-gray-300 border border-white/15 bg-white/5 hover:bg-white/10 hover:border-amethyst-500/30 hover:text-amethyst-400 transition-all duration-300"

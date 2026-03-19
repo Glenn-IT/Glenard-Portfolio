@@ -2,12 +2,11 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
-// Change base to your GitHub repository name for GitHub Pages deployment
-// e.g., if your repo is https://github.com/Glenn-IT/Glenard-Portfolio
-// then base should be '/Glenard-Portfolio/'
+// Base is set to the NEW GitHub repository name: GlennPortfolio
+// Live URL will be: https://glenn-it.github.io/GlennPortfolio/
 export default defineConfig({
   plugins: [react()],
-  base: "/Glenard-Portfolio/",
+  base: "/GlennPortfolio/",
   build: {
     outDir: "dist",
     assetsDir: "assets",

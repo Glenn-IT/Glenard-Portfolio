@@ -5,6 +5,8 @@ import {
   Award,
   MapPin,
   Calendar,
+  Trophy,
+  Star,
 } from "lucide-react";
 
 const experiences = [
@@ -12,19 +14,19 @@ const experiences = [
     type: "work",
     icon: Briefcase,
     role: "IT Support Specialist",
-    company: "Commission on Elections (COMELEC)",
+    company: "Commission on Elections (COMELEC) Region 2",
     location: "Sto. Niño, Cagayan, Philippines",
-    period: "2023 – 2025",
+    period: "July 2023 – May 2025",
     color: "amethyst",
     achievements: [
-      "Set up and maintained computers, networks, and voting equipment across multiple election sites",
-      "Installed, updated, and tested election-related software and system patches",
-      "Resolved hardware, printer, and network issues under strict election timelines",
-      "Managed user accounts, permissions, and system access for election staff",
-      "Backed up and secured sensitive electoral data across distributed systems",
-      "Monitored network and system performance to minimize downtime",
-      "Conducted user training for staff on voting systems and software usage",
-      "Coordinated with vendors and developers for system updates and fixes",
+      "Provided technical support for 200+ employees, resolving hardware, software, and network issues",
+      "Installed, configured, and maintained desktops, laptops, printers, and peripherals for government offices",
+      "Assisted in setup and troubleshooting of election-related IT systems (Voting Counting Machines, servers)",
+      "Managed user accounts, passwords, and access controls in compliance with government IT policies",
+      "Documented IT issues and resolutions in a ticketing system, improving response time by 30%",
+      "Conducted IT orientation sessions for staff on cybersecurity best practices",
+      "Supported national/local election IT operations, ensuring minimal downtime for critical systems",
+      "Assisted in configuration and testing of election hardware/software before deployment",
     ],
   },
   {
@@ -310,6 +312,53 @@ export default function Experience() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+
+        {/* Education & Awards */}
+        <div className="reveal mt-16 grid md:grid-cols-2 gap-8">
+          {/* Education */}
+          <div className="card p-6 border border-slate_blue-500/20">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-slate_blue-500 to-klein_blue-500 flex items-center justify-center">
+                <GraduationCap size={20} className="text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-white">Education</h3>
+            </div>
+            <div className="p-4 rounded-xl bg-white/3 border border-white/8">
+              <p className="font-semibold text-white mb-1">Bachelor of Science in Information Technology</p>
+              <p className="text-amethyst-400 text-sm font-medium mb-2">Cagayan State University</p>
+              <p className="text-gray-500 text-xs mb-3 flex items-center gap-1.5">
+                <Calendar size={11} /> 2019 – 2023
+              </p>
+              <div className="flex items-center gap-2 p-2 rounded-lg bg-amethyst-500/10 border border-amethyst-500/15">
+                <Star size={13} className="text-amethyst-400 flex-shrink-0" />
+                <span className="text-xs text-amethyst-300 font-medium">Consistent Dean's Lister — All 4 Years</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Awards */}
+          <div className="card p-6 border border-amethyst-500/20">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amethyst-500 to-slate_blue-500 flex items-center justify-center">
+                <Trophy size={20} className="text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-white">Awards & Recognition</h3>
+            </div>
+            <ul className="space-y-3">
+              {[
+                { icon: "🏆", text: "Academic Distinction Award — Cagayan State University" },
+                { icon: "💻", text: "Best Capstone Project (Online Category) — Online Appointment System" },
+                { icon: "⭐", text: "Programmer of the Year — Class of 2023, Cagayan State University" },
+                { icon: "👑", text: "Leadership Award — IT Department Student Council" },
+              ].map((award, i) => (
+                <li key={i} className="flex items-start gap-3 p-3 rounded-xl bg-white/3 border border-white/8 hover:border-amethyst-500/20 transition-all duration-200">
+                  <span className="text-lg flex-shrink-0">{award.icon}</span>
+                  <span className="text-sm text-gray-300">{award.text}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

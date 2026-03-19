@@ -127,7 +127,7 @@ export default function Hero() {
               </button>
 
               <a
-                href="assets/pdf/Applicant - Glenard Pagurayan - Resume.pdf"
+                href="https://drive.google.com/file/d/1oTESN53KYenGwP9OU3i5vMLF69w1XC5T/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold
@@ -225,7 +225,7 @@ export default function Hero() {
               {/* Avatar container */}
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-amethyst-500/30 shadow-glow-purple animate-float">
                 <img
-                  src="assets/img/P1-removebg.png"
+                  src="/P1-removebg.png"
                   alt="Glenard Pagurayan"
                   className="w-full h-full object-cover object-top"
                   onError={(e) => {
